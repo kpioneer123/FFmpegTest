@@ -43,12 +43,13 @@ LOCAL_MODULE := swscale
 LOCAL_SRC_FILES := libswscale-3.so
 include $(PREBUILT_SHARED_LIBRARY)
 
+
 #myapp
 include $(CLEAR_VARS)
 LOCAL_MODULE := myffmpeg
 LOCAL_SRC_FILES := ffmpeg_player.c
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
-LOCAL_LDLIBS := -llog
+LOCAL_LDLIBS := -llog -landroid
 LOCAL_SHARED_LIBRARIES := avcodec avdevice avfilter avformat avutil postproc swresample swscale
 include $(BUILD_SHARED_LIBRARY)
 

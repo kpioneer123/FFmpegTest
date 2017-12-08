@@ -5,9 +5,15 @@
     android:orientation="vertical" >
 
     <Button
+        android:id="@+id/btn_decode"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="解码"
-        android:onClick="mDecode" />
-
+      />
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="绘制(播放)"
+     />
 </LinearLayout>

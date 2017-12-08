@@ -9,6 +9,14 @@ extern "C" {
 #endif
 /*
  * Class:     com_haocai_ffmpegtest_VideoUtils
+ * Method:    render
+ * Signature: (Ljava/lang/String;Landroid/view/Surface;)V
+ */
+JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_render
+  (JNIEnv *, jobject, jstring, jobject);
+
+/*
+ * Class:     com_haocai_ffmpegtest_VideoUtils
  * Method:    decode
  * Signature: (Ljava/lang/String;Ljava/lang/String;)V
  */

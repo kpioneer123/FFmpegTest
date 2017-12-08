@@ -1,9 +1,12 @@
 package com.haocai.ffmpegtest;
 
+import android.view.Surface;
+
 public class VideoUtils {
 
 	public native static void decode(String input,String output);
-	
+	public native void render(String input,Surface surface);
+
 	static{
 		System.loadLibrary("avutil-54");
 		System.loadLibrary("swresample-1");

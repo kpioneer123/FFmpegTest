@@ -18,6 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--<activity android:name=".SimpleDecodeActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="abc" />-->
+                <!--<category android:name="android.intent.category.DEFAULT" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <activity android:name=".SimplePlayActivity"/>
+
     </application>
 
 </manifest>
