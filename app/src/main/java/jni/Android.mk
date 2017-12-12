@@ -47,8 +47,9 @@ include $(PREBUILT_SHARED_LIBRARY)
 #myapp
 include $(CLEAR_VARS)
 LOCAL_MODULE := myffmpeg
-LOCAL_SRC_FILES := ffmpeg_player.c
+LOCAL_SRC_FILES := ffmpeg_player.c ffmpeg_voicer.c
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
+##-landroid参数 for native_window.h native_window_jni.h等
 LOCAL_LDLIBS := -llog -landroid
 LOCAL_SHARED_LIBRARIES := avcodec avdevice avfilter avformat avutil postproc swresample swscale
 include $(BUILD_SHARED_LIBRARY)

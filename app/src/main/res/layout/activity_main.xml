@@ -8,12 +8,18 @@
         android:id="@+id/btn_decode"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="解码"
+        android:text="视频解码"
       />
     <Button
         android:id="@+id/btn_play"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="绘制(播放)"
+        android:text="视频播放"
      />
+    <Button
+        android:id="@+id/btn_audio_decode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="音频解码"
+        />
 </LinearLayout>

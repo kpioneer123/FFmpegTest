@@ -9,6 +9,14 @@ extern "C" {
 #endif
 /*
  * Class:     com_haocai_ffmpegtest_VideoUtils
+ * Method:    decode
+ * Signature: (Ljava/lang/String;Ljava/lang/String;)V
+ */
+JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_decode
+  (JNIEnv *, jclass, jstring, jstring);
+
+/*
+ * Class:     com_haocai_ffmpegtest_VideoUtils
  * Method:    render
  * Signature: (Ljava/lang/String;Landroid/view/Surface;)V
  */
@@ -17,11 +25,11 @@ JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_render
 
 /*
  * Class:     com_haocai_ffmpegtest_VideoUtils
- * Method:    decode
+ * Method:    sound
  * Signature: (Ljava/lang/String;Ljava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_decode
-  (JNIEnv *, jclass, jstring, jstring);
+JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_audioDecode
+  (JNIEnv *, jobject, jstring, jstring);
 
 #ifdef __cplusplus
 }

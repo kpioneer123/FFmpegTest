@@ -3,10 +3,12 @@ package com.haocai.ffmpegtest;
 import android.view.Surface;
 
 public class VideoUtils {
-
+    //视频解码
 	public native static void decode(String input,String output);
+	//视频播放
 	public native void render(String input,Surface surface);
-
+	//音频解码
+    public native void audioDecode(String input,String output);
 	static{
 		System.loadLibrary("avutil-54");
 		System.loadLibrary("swresample-1");

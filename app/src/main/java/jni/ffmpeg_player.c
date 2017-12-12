@@ -289,4 +289,3 @@ JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_render
     (*env)->ReleaseStringUTFChars(env, input_jstr, file_name);
     return ;
 }
-
