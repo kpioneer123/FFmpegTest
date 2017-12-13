@@ -1,6 +1,6 @@
 ./obj/local/armeabi/objs/myffmpeg/ffmpeg_player.o: \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/ffmpeg_player.c \
-  D:/AndroidProject/FFmpegTest/app/src/main/java/jni\com_haocai_ffmpegtest_VideoUtils.h \
+  D:/AndroidProject/FFmpegTest/app/src/main/java/jni\com_haocai_ffmpegtest_util_VideoPlayer.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libavcodec/avcodec.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libavutil/samplefmt.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libavutil/avutil.h \
@@ -28,9 +28,11 @@
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libavformat/avio.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libavformat/version.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libswscale/swscale.h \
-  D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libswscale/version.h
+  D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libswscale/version.h \
+  D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libavutil/imgutils.h \
+  D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libavutil/pixdesc.h
 
-D:/AndroidProject/FFmpegTest/app/src/main/java/jni\com_haocai_ffmpegtest_VideoUtils.h:
+D:/AndroidProject/FFmpegTest/app/src/main/java/jni\com_haocai_ffmpegtest_util_VideoPlayer.h:
 
 D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libavcodec/avcodec.h:
 
@@ -87,3 +89,7 @@ D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libavformat/version.h
 D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libswscale/swscale.h:
 
 D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libswscale/version.h:
+
+D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libavutil/imgutils.h:
+
+D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libavutil/pixdesc.h:

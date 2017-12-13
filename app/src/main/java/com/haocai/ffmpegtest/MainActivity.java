@@ -5,12 +5,12 @@ import android.os.Bundle;
 import java.io.File;
 import android.app.Activity;
 import android.os.Environment;
-import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import butterknife.BindView;
+import com.haocai.ffmpegtest.util.VideoPlayer;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
     }
-    @OnClick({R.id.btn_decode, R.id.btn_play,R.id.btn_audio_decode})
+    @OnClick({R.id.btn_decode, R.id.btn_play,R.id.btn_audio_decode,R.id.btn_audio_player})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_decode:
@@ -40,6 +40,9 @@ public class MainActivity extends Activity {
 
                 doAudioDecode();
                 break;
+            case R.id.btn_audio_player:
+                audioPlayer();
+                break;
         }
     }
 
@@ -49,7 +52,7 @@ public class MainActivity extends Activity {
     public void doDecode(){
         String input = new File(Environment.getExternalStorageDirectory(),"小苹果.mp4").getAbsolutePath();
         String output = new File(Environment.getExternalStorageDirectory(),"小苹果_out.yuv").getAbsolutePath();
-        VideoUtils.decode(input, output);
+        VideoPlayer.decode(input, output);
         Toast.makeText(this,"正在解码...",Toast.LENGTH_SHORT).show();
     }
 
@@ -59,8 +62,25 @@ public class MainActivity extends Activity {
     public void doAudioDecode(){
         String input = new File(Environment.getExternalStorageDirectory(),"说散就散.mp3").getAbsolutePath();
         String output = new File(Environment.getExternalStorageDirectory(),"说散就散.pcm").getAbsolutePath();
-        VideoUtils player = new VideoUtils();
+        VideoPlayer player = new VideoPlayer();
         player.audioDecode(input, output);
         Toast.makeText(this,"正在解码...",Toast.LENGTH_SHORT).show();
+    }
+    /**
+     * 音频解码
+     */
+    public void audioPlayer(){
+        /**
+         * 1.播放视频文件中的音频
+         */
+    //   String input = new File(Environment.getExternalStorageDirectory(),"告白气球.avi").getAbsolutePath();
+
+        /**
+         * 2.播放音频文件中的音频
+         */
+        String input = new File(Environment.getExternalStorageDirectory(),"说散就散.mp3").getAbsolutePath();
+        VideoPlayer player = new VideoPlayer();
+        player.audioPlayer(input);
+        Log.d("Main","正在播放");
     }
 }

@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.haocai.ffmpegtest.util.VideoPlayer;
+
 import java.io.File;
 
 import butterknife.BindView;
@@ -17,14 +19,14 @@ public class SimpleAudioPlayActivity extends Activity  implements SurfaceHolder.
 
     @BindView(R.id.video_view)
     SurfaceView videoView;
-    private VideoUtils player;
+    private VideoPlayer player;
     SurfaceHolder surfaceHolder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_play);
         ButterKnife.bind(this);
-        player = new VideoUtils();
+        player = new VideoPlayer();
         surfaceHolder = videoView.getHolder();
         //surface
         surfaceHolder.addCallback(this);

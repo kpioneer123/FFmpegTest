@@ -1,14 +1,17 @@
-package com.haocai.ffmpegtest;
+package com.haocai.ffmpegtest.util;
 
 import android.view.Surface;
 
-public class VideoUtils {
+public class VideoPlayer {
     //视频解码
 	public native static void decode(String input,String output);
 	//视频播放
 	public native void render(String input,Surface surface);
 	//音频解码
     public native void audioDecode(String input,String output);
+	//音频播放
+	public native void audioPlayer(String input);
+
 	static{
 		System.loadLibrary("avutil-54");
 		System.loadLibrary("swresample-1");
@@ -20,4 +23,6 @@ public class VideoUtils {
 		System.loadLibrary("avdevice-56");
 		System.loadLibrary("myffmpeg");
 	}
+
+
 }

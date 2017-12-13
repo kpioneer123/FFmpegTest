@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 
+import com.haocai.ffmpegtest.util.VideoPlayer;
+
 import java.io.File;
 
 public class SimpleDecodeActivity extends Activity {
@@ -18,6 +20,6 @@ public class SimpleDecodeActivity extends Activity {
     public void mDecode(View btn){
         String input = new File(Environment.getExternalStorageDirectory(),"小苹果.mp4").getAbsolutePath();
         String output = new File(Environment.getExternalStorageDirectory(),"小苹果_out.yuv").getAbsolutePath();
-        VideoUtils.decode(input, output);
+        VideoPlayer.decode(input, output);
     }
 }

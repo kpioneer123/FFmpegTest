@@ -1,8 +1,9 @@
-#include <com_haocai_ffmpegtest_VideoUtils.h>
+#include <com_haocai_ffmpegtest_util_VideoPlayer.h>
 #include <android/log.h>
 #include <android/native_window_jni.h>
 #include <android/native_window.h>
 #include <stdio.h>
+#include <unistd.h>
 //解码
 #include "include/libavcodec/avcodec.h"
 //封装格式处理
@@ -10,13 +11,14 @@
 //像素处理
 #include "include/libswscale/swscale.h"
 
+#include "include/libavutil/imgutils.h"
 #define  LOG_TAG    "ffmpegandroidplayer"
 #define  LOGI(FORMAT,...) __android_log_print(ANDROID_LOG_INFO,LOG_TAG,FORMAT,##__VA_ARGS__);
 #define  LOGE(FORMAT,...) __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,FORMAT,##__VA_ARGS__);
 #define  LOGD(FORMAT,...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG,FORMAT, ##__VA_ARGS__)
 
 //解码
-JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_decode
+JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_decode
 (JNIEnv *env, jclass jcls, jstring input_jstr, jstring output_jstr) {
 	const char* input_cstr = (*env)->GetStringUTFChars(env, input_jstr, NULL);
 	const char* output_cstr = (*env)->GetStringUTFChars(env, output_jstr, NULL);
@@ -105,7 +107,7 @@ JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_decode
 			//3 7输入、输出画面一行的数据的大小 AVFrame 转换是一行一行转换的
 			//4 输入数据第一列要转码的位置 从0开始
 			//5 输入画面的高度
-			sws_scale(sws_ctx, frame->data, frame->linesize, 0,
+			sws_scale(sws_ctx,(const uint8_t *const *) frame->data, frame->linesize, 0,
 				frame->height, yuvFrame->data, yuvFrame->linesize);
 
 			//输出到YUV文件
@@ -133,8 +135,8 @@ JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_decode
 	(*env)->ReleaseStringUTFChars(env, output_jstr, output_cstr);
 }
 
-
-JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_VideoUtils_render
+//视频播放
+JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_render
   (JNIEnv *env, jobject jobj, jstring input_jstr, jobject surface){
 	const char* file_name = (*env)->GetStringUTFChars(env, input_jstr, NULL);
 

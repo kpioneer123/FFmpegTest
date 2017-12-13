@@ -1,6 +1,6 @@
 ./obj/local/armeabi/objs/myffmpeg/ffmpeg_voicer.o: \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/ffmpeg_voicer.c \
-  D:/AndroidProject/FFmpegTest/app/src/main/java/jni\com_haocai_ffmpegtest_VideoUtils.h \
+  D:/AndroidProject/FFmpegTest/app/src/main/java/jni\com_haocai_ffmpegtest_util_VideoPlayer.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libavcodec/avcodec.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libavutil/samplefmt.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libavutil/avutil.h \
@@ -32,7 +32,7 @@
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libswresample/swresample.h \
   D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include\libswresample/version.h
 
-D:/AndroidProject/FFmpegTest/app/src/main/java/jni\com_haocai_ffmpegtest_VideoUtils.h:
+D:/AndroidProject/FFmpegTest/app/src/main/java/jni\com_haocai_ffmpegtest_util_VideoPlayer.h:
 
 D:/AndroidProject/FFmpegTest/app/src/main/java/jni/include/libavcodec/avcodec.h:
 
