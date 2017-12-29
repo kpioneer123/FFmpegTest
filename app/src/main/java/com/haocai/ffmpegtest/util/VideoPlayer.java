@@ -11,7 +11,8 @@ public class VideoPlayer {
     public native void audioDecode(String input,String output);
 	//音频播放
 	public native void audioPlayer(String input);
-
+    //音视频播放
+	public native void play(String input,Surface surface);
 	static{
 		System.loadLibrary("avutil-54");
 		System.loadLibrary("swresample-1");

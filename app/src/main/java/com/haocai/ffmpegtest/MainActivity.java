@@ -26,22 +26,25 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
     }
-    @OnClick({R.id.btn_decode, R.id.btn_play,R.id.btn_audio_decode,R.id.btn_audio_player})
+    @OnClick({R.id.btn_decode,R.id.btn_render, R.id.btn_play,R.id.btn_audio_decode,R.id.btn_audio_player})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_decode:
                 doDecode();
                 break;
-            case R.id.btn_play:
-                Intent intent = new Intent(MainActivity.this,SimplePlayActivity.class);
+            case R.id.btn_render:
+                Intent intent = new Intent(MainActivity.this,SimpleRenderActivity.class);
                 MainActivity.this.startActivity(intent);
                 break;
             case R.id.btn_audio_decode:
 
-                doAudioDecode();
+                audioDecode();
                 break;
             case R.id.btn_audio_player:
                 audioPlayer();
+                break;
+            case R.id.btn_play:
+                play();
                 break;
         }
     }
@@ -59,7 +62,7 @@ public class MainActivity extends Activity {
     /**
      * 音频解码
      */
-    public void doAudioDecode(){
+    public void audioDecode(){
         String input = new File(Environment.getExternalStorageDirectory(),"说散就散.mp3").getAbsolutePath();
         String output = new File(Environment.getExternalStorageDirectory(),"说散就散.pcm").getAbsolutePath();
         VideoPlayer player = new VideoPlayer();
@@ -82,5 +85,10 @@ public class MainActivity extends Activity {
         VideoPlayer player = new VideoPlayer();
         player.audioPlayer(input);
         Log.d("Main","正在播放");
+    }
+
+    public void play(){
+        Intent intent = new Intent(MainActivity.this,SimplePlayActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 }

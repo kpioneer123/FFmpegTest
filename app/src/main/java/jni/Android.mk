@@ -1,4 +1,3 @@
-
 LOCAL_PATH := $(call my-dir)
 
 #ffmpeg lib
@@ -47,7 +46,7 @@ include $(PREBUILT_SHARED_LIBRARY)
 #myapp
 include $(CLEAR_VARS)
 LOCAL_MODULE := myffmpeg
-LOCAL_SRC_FILES := ffmpeg_player.c ffmpeg_voicer.c
+LOCAL_SRC_FILES := ffmpeg_render.c ffmpeg_voicer.c ffmpeg_play.c queue.c
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
 ##-landroid参数 for native_window.h native_window_jni.h等
 LOCAL_LDLIBS := -llog -landroid

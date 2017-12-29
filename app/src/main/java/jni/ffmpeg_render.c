@@ -218,9 +218,10 @@ JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_render
 
     // Determine required buffer size and allocate buffer
     // buffer中数据就是用于渲染的,且格式为RGBA
-    int numBytes = av_image_get_buffer_size(AV_PIX_FMT_RGBA, pCodecCtx->width, pCodecCtx->height,
-                                            1);
+    int numBytes = av_image_get_buffer_size(AV_PIX_FMT_RGBA, pCodecCtx->width, pCodecCtx->height,  1);
+
     uint8_t *buffer = (uint8_t *) av_malloc(numBytes * sizeof(uint8_t));
+
     av_image_fill_arrays(pFrameRGBA->data, pFrameRGBA->linesize, buffer, AV_PIX_FMT_RGBA,
                          pCodecCtx->width, pCodecCtx->height, 1);
 

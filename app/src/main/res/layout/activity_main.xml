@@ -11,7 +11,7 @@
         android:text="视频解码"
       />
     <Button
-        android:id="@+id/btn_play"
+        android:id="@+id/btn_render"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="视频播放"
@@ -27,5 +27,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="音频播放"
+        />
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="音视频同步播放"
         />
 </LinearLayout>

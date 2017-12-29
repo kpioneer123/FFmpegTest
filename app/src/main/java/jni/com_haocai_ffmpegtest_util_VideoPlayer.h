@@ -34,10 +34,18 @@ JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_audioDecode
 /*
  * Class:     com_haocai_ffmpegtest_util_VideoPlayer
  * Method:    audioPlayer
- * Signature: (Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_audioPlayer
   (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     com_haocai_ffmpegtest_util_VideoPlayer
+ * Method:    play
+ * Signature: (Ljava/lang/String;Landroid/view/Surface;)V
+ */
+JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_play
+  (JNIEnv *, jobject, jstring, jobject);
 
 #ifdef __cplusplus
 }

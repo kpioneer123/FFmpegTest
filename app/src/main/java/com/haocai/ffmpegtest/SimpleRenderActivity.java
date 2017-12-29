@@ -11,11 +11,10 @@ import android.view.SurfaceView;
 import com.haocai.ffmpegtest.util.VideoPlayer;
 
 import java.io.File;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SimplePlayActivity extends Activity  implements SurfaceHolder.Callback {
+public class SimpleRenderActivity extends Activity  implements SurfaceHolder.Callback {
 
 
     @BindView(R.id.video_view)
@@ -40,7 +39,7 @@ public class SimplePlayActivity extends Activity  implements SurfaceHolder.Callb
             public void run() {
                 String input = new File(Environment.getExternalStorageDirectory(),"告白气球.avi").getAbsolutePath();
                 Log.d("main",input);
-                player.play(input, holder.getSurface());
+                player.render(input, holder.getSurface());
             }
         }).start();
     }
@@ -58,5 +57,4 @@ public class SimplePlayActivity extends Activity  implements SurfaceHolder.Callb
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
     }
-
 }
