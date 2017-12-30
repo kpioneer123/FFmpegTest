@@ -32,6 +32,6 @@
         android:id="@+id/btn_play"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="音视频同步播放"
+        android:text="音视频同步播放用C实现"
         />
 </LinearLayout>

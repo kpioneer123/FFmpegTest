@@ -14,7 +14,7 @@ android {
         }
         sourceSets.main{
             jni.srcDirs = []
-            jniLibs.srcDir "src/main/libs"
+            //jniLibs.srcDir "src/main/libs"
         }
     }
     buildTypes {
@@ -30,6 +30,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.jakewharton:butterknife:8.6.0'
+
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
