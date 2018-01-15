@@ -34,4 +34,10 @@
         android:layout_height="wrap_content"
         android:text="音视频同步播放用C实现"
         />
+    <Button
+        android:id="@+id/btn_transcoding_compress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="转码压缩"
+        />
 </LinearLayout>

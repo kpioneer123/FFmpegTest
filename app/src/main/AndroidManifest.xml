@@ -26,9 +26,16 @@
         <!--</activity>-->
 
         <activity android:name=".SimpleRenderActivity"
+            android:hardwareAccelerated="true"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".SimplePlayActivity"
+            android:hardwareAccelerated="true"
             android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".sdl.SDLActivity"
+            android:hardwareAccelerated="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+
     </application>
 
 </manifest>
