@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         ButterKnife.bind(this);
         player = new VideoPlayer();
     }
-    @OnClick({R.id.btn_decode,R.id.btn_render, R.id.btn_play,R.id.btn_audio_decode,R.id.btn_audio_player,R.id.btn_transcoding_compress})
+    @OnClick({R.id.btn_decode,R.id.btn_render, R.id.btn_play,R.id.btn_audio_decode,R.id.btn_audio_player,R.id.btn_transcoding_compress,R.id.btn_addWatermark})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_decode:
@@ -50,6 +50,9 @@ public class MainActivity extends Activity {
                 break;
             case R.id.btn_transcoding_compress:
                 transcodingCompress();
+                break;
+            case R.id.btn_addWatermark:
+                addWatermark();
                 break;
         }
     }
@@ -117,9 +120,27 @@ public class MainActivity extends Activity {
                 String[] argv = builder.toString().split(" ");
                 int argc = argv.length;
 
-                player.transcodingCompress(argc,argv);
+                player.ffmpegCmdUtil(argc,argv);
             }
         }).start();
 
+    }
+    public void addWatermark(){
+        File ipFile = new File(Environment.getExternalStorageDirectory(),"告白气球.avi");
+        File opFile = new File(Environment.getExternalStorageDirectory(),"告白气球_out.mp4");
+        File wmFile = new File(Environment.getExternalStorageDirectory(),"watermark.png");
+
+        String str = "ffmpeg -i "+ipFile.getAbsolutePath()+" -i "+wmFile.getAbsolutePath()+" -filter_complex overlay=480:10 "+opFile.getAbsolutePath();
+
+        final String[] argv = str.split(" ");
+
+        final int argc = argv.length;
+
+        new Thread(){
+            public void run() {
+                player.ffmpegCmdUtil(argc,argv);
+                Log.i("main","------加水印完成-------");
+            }
+        }.start();
     }
 }

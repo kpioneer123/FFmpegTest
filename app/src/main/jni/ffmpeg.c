@@ -15,7 +15,7 @@
 int ffmpegmain(int argc, char **argv);
 
 
-JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_transcodingCompress
+JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_ffmpegCmdUtil
         (JNIEnv *env, jobject jobj,jint jlen,jobjectArray jobjArray){
     //转码
     //将java的字符串数组转成C字符串

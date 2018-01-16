@@ -14,10 +14,10 @@ public class VideoPlayer {
 	public native void audioPlayer(String input);
     //音视频播放
 	public native void play(String input,Surface surface);
-
 	//视频转码压缩
-	public native void transcodingCompress(int argc,String[] argv);
-
+	public native void ffmpegCmdUtil(int argc,String[] argv);
+	//添加水印
+	public native void addWatermark(int argc,String[] argv);
 	static{
 		System.loadLibrary("avutil-54");
 		System.loadLibrary("swresample-1");

@@ -138,8 +138,8 @@ include $(BUILD_STATIC_LIBRARY)
 #myapp
 include $(CLEAR_VARS)
 LOCAL_MODULE := myffmpeg
-#cmdutils.c ffmpeg_filter.c ffmpeg_transcoding.c ffmpeg_mod.c ffmpeg_opt.c 转码相关
-LOCAL_SRC_FILES := ffmpeg_render.c ffmpeg_voicer.c ffmpeg_play.c queue.c  cmdutils.c ffmpeg_filter.c ffmpeg_transcoding.c ffmpeg_mod.c ffmpeg_opt.c
+#cmdutils.c ffmpeg_filter.c ffmpeg.c ffmpeg_mod.c ffmpeg_opt.c 转码相关
+LOCAL_SRC_FILES := ffmpeg_render.c ffmpeg_voicer.c ffmpeg_play.c queue.c  cmdutils.c ffmpeg_filter.c ffmpeg.c ffmpeg_mod.c ffmpeg_opt.c
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
 ##-landroid参数 for native_window.h native_window_jni.h等
 LOCAL_LDLIBS := -llog -landroid

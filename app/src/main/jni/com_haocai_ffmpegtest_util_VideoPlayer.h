@@ -49,11 +49,12 @@ JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_play
 
 /*
  * Class:     com_haocai_ffmpegtest_util_VideoPlayer
- * Method:    transcodingCompress
+ * Method:    ffmpegCmdUtil
  * Signature: (I[Ljava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_transcodingCompress
+JNIEXPORT void JNICALL Java_com_haocai_ffmpegtest_util_VideoPlayer_ffmpegCmdUtil
   (JNIEnv *, jobject, jint, jobjectArray);
+
 
 #ifdef __cplusplus
 }

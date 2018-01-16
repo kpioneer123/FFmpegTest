@@ -40,4 +40,10 @@
         android:layout_height="wrap_content"
         android:text="转码压缩"
         />
+    <Button
+        android:id="@+id/btn_addWatermark"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="视频添加水印"
+        />
 </LinearLayout>
